@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nubo — One product, done right.</title>
+  <link rel="stylesheet" href="css/nubo.css?v=3" />
+</head>
+<body style="background:var(--cream)">
+  <header class="nav">
+    <div class="nav-bar">
+      <a href="index.html"><img class="nav-logo" src="assets/I0IM9xzrz1Pwr8vHBfgEPDbj7LU.svg" alt="nubo" /></a>
+      <button class="nav-toggle" type="button" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-panel">
+      <nav class="nav-links">
+        <a href="cases/index.html">Use cases</a><a href="about.html">About</a><a href="waitlist.html">Waitlist</a><a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <div class="form-sheet" style="padding-top:120px">
+    <div class="sheet">
+      <p class="grey display h48">Say hello</p>
+      <h1 class="display h60">A person reads every one.</h1>
+      <p style="margin:16px 0 32px;max-width:360px">Nubo is small. Tell us about your home, and what you'd want it to take off your hands.</p>
+      <p class="caps">Follow</p>
+      <a class="caps" href="https://youtube.com">Youtube</a>
+      <a class="caps" href="https://tiktok.com">Tiktok</a>
+      <a class="caps" href="https://instagram.com">Instagram</a>
+      <a class="caps" href="https://x.com">X (Twitter)</a>
+      <p class="caps" style="margin-top:24px">Or just write</p>
+      <a href="mailto:hello@nubo.design">hello@nubo.design</a>
+    </div>
+    <div class="sheet">
+      <form onsubmit="event.preventDefault();this.querySelector('button').textContent='SENT'">
+        <div class="field"><span class="num">01</span><label>Name</label><small>First name is fine. Keeps it human.</small><input required /></div>
+        <div class="field"><span class="num">02</span><label>Email</label><small>The real one. We won't pass it around.</small><input type="email" required /></div>
+        <div class="field"><span class="num">03</span><label>City</label><small>Where home is. Helps us with timing.</small><input /></div>
+        <div class="field"><span class="num">04</span><label>Household</label><small>Who Nubo would be living with.</small><input /></div>
+        <div class="field"><span class="num">05</span><label>Reason</label><small>Beta place, a question, or press. Pick one.</small><input /></div>
+        <button class="btn btn-fill" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+  <script src="js/nubo.js?v=3"></script>
+</body>
+</html>
