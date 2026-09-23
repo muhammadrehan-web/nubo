@@ -1,10 +1,11 @@
-(function () {
+// @ts-nocheck
+export function initNubo() {
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 
   $$(".scramble").forEach((btn) => {
     const label = btn.querySelector(".btn-label");
-    if (!label) return;
+    if (!label || label.querySelector(".ch")) return;
     const text = label.textContent;
     label.innerHTML = "";
     [...text].forEach((ch, i) => {
@@ -25,39 +26,7 @@
     });
   });
 
-  const nav = $(".nav");
-  const toggle = $(".nav-toggle");
-  if (nav && toggle) {
-    toggle.addEventListener("click", () => {
-      const open = nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      toggle.setAttribute("aria-label", open ? "Close menu" : "Toggle menu");
-    });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        nav.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Toggle menu");
-      }
-    });
-  }
-
-  const launch = new Date("2026-12-24T00:00:00Z").getTime();
-  function tick() {
-    const t = Math.max(0, launch - Date.now());
-    const d = Math.floor(t / 86400000);
-    const h = Math.floor((t % 86400000) / 3600000);
-    const m = Math.floor((t % 3600000) / 60000);
-    const s = Math.floor((t % 60000) / 1000);
-    const map = { days: d, hrs: h, min: m, sec: s };
-    Object.entries(map).forEach(([k, v]) => {
-      $$("[data-cd='" + k + "']").forEach((el) => {
-        el.textContent = String(v).padStart(2, "0");
-      });
-    });
-  }
-  tick();
-  setInterval(tick, 1000);
+  // Nav toggle + countdown live in SiteNav (React)
 
   function bindCarousel(root, radius, scale, speed) {
     const items = $$(root + " .logo-item");
@@ -361,11 +330,13 @@
   }
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
-})();
+  neuralSphere();
+  bindPlanCards();
 
-(function neuralSphere() {
+  function neuralSphere() {
   const root = document.querySelector(".neural-field");
-  if (!root) return;
+  if (!root || root.dataset.neuralInit === "1") return;
+  root.dataset.neuralInit = "1";
   const N = 100;
   const R = 124;
   const CX = 146;
@@ -470,6 +441,9 @@
   }
   requestAnimationFrame(frame);
 
+  }
+
+  function bindPlanCards() {
   const planCards = $$(".plan");
   planCards.forEach((plan) => {
     const video = plan.querySelector("video.plan-face");
@@ -501,4 +475,5 @@
     requestAnimationFrame(syncPlanHover);
   }
   requestAnimationFrame(syncPlanHover);
-})();
+  }
+}

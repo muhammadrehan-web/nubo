@@ -1,0 +1,12 @@
+# Prefer TypeScript in GitHub language stats
+*.css linguist-vendored
+*.js linguist-vendored
+public/** linguist-vendored
+scripts/** linguist-vendored
+_static-legacy/** linguist-vendored
+*.md linguist-documentation
+
+*.ts linguist-detectable=true
+*.tsx linguist-detectable=true
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript

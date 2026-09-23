@@ -1,8 +1,31 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# next
+.next/
+out/
+build/
+dist/
+
+# env / secrets
+.env
+.env.*
+!.env.example
+
+# misc
 .DS_Store
 Thumbs.db
 *.log
-.env
-.env.*
-node_modules/
 .vscode/
 .idea/
+
+# legacy static leftovers (kept during migration, ignore if regenerated)
+_nubo-study/
+_static-legacy/

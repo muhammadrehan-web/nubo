@@ -2318,8 +2318,8 @@ body:has(.nav.open) .hero-kicker { opacity: 0; }
   position: absolute;
   inset: 0;
   background: rgb(38, 38, 38);
-  -webkit-mask: url("../assets/G4hnlTxLjXT0tSLTfTF4qXKr4.svg") center / contain no-repeat;
-  mask: url("../assets/G4hnlTxLjXT0tSLTfTF4qXKr4.svg") center / contain no-repeat;
+  -webkit-mask: url("/assets/G4hnlTxLjXT0tSLTfTF4qXKr4.svg") center / contain no-repeat;
+  mask: url("/assets/G4hnlTxLjXT0tSLTfTF4qXKr4.svg") center / contain no-repeat;
 }
 .star::before { opacity: 0.35; }
 .star::after { clip-path: inset(0 var(--cut) 0 0); }
